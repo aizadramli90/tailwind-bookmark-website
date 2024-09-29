@@ -1,3 +1,16 @@
+/* menu for mobile */
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+    mobileMenu.classList.toggle('flex');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.classList.toggle('open');
+}
+
+
 const tab1 = document.getElementById('tab-1');
 const tab2 = document.getElementById('tab-2');
 const tab3 = document.getElementById('tab-3');
@@ -56,4 +69,29 @@ function toggleView3Hide1and2(e) {
     document.getElementById('tab-1').classList.remove('border-carnation', 'border-b-4');
     document.getElementById('tab-2').classList.remove('border-carnation', 'border-b-4');
         
+}
+
+/* USING forEach */
+
+const questions = document.querySelectorAll('.question')
+const answers = document.querySelectorAll('.answer');
+
+questions.forEach((question) => question.addEventListener('click', questionClicked));
+
+
+function questionClicked(e) {
+   const clickedQuestion = e.target.closest('.question');
+   const theAnswer = clickedQuestion.nextElementSibling;
+   const arrowImage = clickedQuestion.querySelector('arrow')
+
+   if (theAnswer && theAnswer.classList.contains('answer')) {
+    theAnswer.classList.toggle('hidden');
+    clickedQuestion.classList.toggle('border-b-2')
+   }
+
+   answers.forEach((answer) => {
+    if (answer !== theAnswer) {
+        answer.classList.add('hidden');
+    }
+   })
 }

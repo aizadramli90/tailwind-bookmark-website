@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,8 +14,11 @@
     <title>Bookmark</title>
   </head>
   <body class="overflow-x-hidden">
-    <nav class="py-12 px-16 flex flex-row justify-between items-center mx-auto">
-      <div><img src="./images/logo-bookmark.svg" alt="" /></div>
+    <nav
+      class="relative py-12 px-16 flex flex-row justify-between items-center mx-auto"
+      id="login"
+    >
+      <div class="z-[60]"><img src="./images/logo-bookmark.svg" alt="" /></div>
       <div
         class="hidden md:flex md:flex-row md:gap-10 text-gray-400 items-center"
       >
@@ -25,13 +28,11 @@
           >Features</a
         >
         <a
-          href="#features"
+          href="#download"
           class="uppercase hidden md:flex hover:text-carnation"
           >Download</a
         >
-        <a
-          href="#features"
-          class="uppercase hidden md:flex hover:text-carnation"
+        <a href="#faq" class="uppercase hidden md:flex hover:text-carnation"
           >Faq</a
         >
         <button
@@ -40,10 +41,41 @@
           Login
         </button>
       </div>
-      <div id="hamburger-button" class="md:hidden">
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
+      <div class="md:hidden">
+        <button
+          id="menu-btn"
+          type="button"
+          class="block z-[60] hamburger md:hidden focus:outline-none"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden flex-col fixed inset-0 w-full h-full min-h-screen z-50 md:hidden bg-royalBlue opacity-80 items-center pt-28 text-center space-y-10"
+      >
+        <div
+          class="uppercase text-white w-4/5 border-b-2 hover:cursor-pointer hover:text-carnation"
+        >
+          <a href="#features">Features</a>
+        </div>
+        <div
+          class="uppercase text-white w-4/5 border-b-2 hover:cursor-pointer hover:text-carnation"
+        >
+          <a href="#download">Download</a>
+        </div>
+        <div
+          class="uppercase text-white w-4/5 border-b-2 hover:cursor-pointer hover:text-carnation"
+        >
+          <a href="#faq">Faq</a>
+        </div>
+        <div
+          class="uppercase text-white w-4/5 border-b-2 hover:cursor-pointer hover:text-carnation"
+        >
+          <a href="#login">Login</a>
+        </div>
       </div>
     </nav>
     <section id="hero" class="mt-20 px-10">
@@ -97,7 +129,7 @@
         <div class="bg-tab"></div>
         <!-- tabs -->
         <div
-          class="flex flex-col md:flex-row text-gray-700 border-b mb-6 md:space-x-10 w-3/5 z-50 bg-white"
+          class="flex flex-col md:flex-row text-gray-700 border-b mb-6 md:space-x-10 w-3/5 z-30 bg-white"
         >
           <div
             id="tab-1"
@@ -193,7 +225,7 @@
         </div>
       </div>
     </section>
-    <section id="extension" class="text-center space-y-10 mt-40 px-16">
+    <section id="download" class="text-center space-y-10 mt-40 px-16">
       <h2>Download the extension</h2>
       <p class="max-w-md mx-auto">
         We've got more browsers in the pipeline. Please do let us know if you've
@@ -255,7 +287,7 @@
         <div class="flex flex-col items-center justify-center py-5">
           <div class="flex flex-col items-center justify-center w-2/3">
             <div
-              class="flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
+              class="question flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
             >
               <p class="text-gray-700 group-hover:text-carnation">
                 What is Bookmark?
@@ -263,11 +295,13 @@
               <img
                 src="./images/icon-arrow.svg"
                 alt=""
-                class="w-[18px] h-[12px]"
-                id="arrow-inverted"
+                class="w-[18px] h-[12px] arrow"
+                id="arrow1"
               />
             </div>
-            <p class="w-full mx-auto text-left mt-14 hidden">
+            <p
+              class="answer w-full mx-auto text-left mt-14 hidden border-b-2 border-gray-300"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur error accusamus, assumenda explicabo necessitatibus
               ducimus. Nostrum aut sapiente quaerat vel eum minima a id.
@@ -279,7 +313,7 @@
         <div class="flex flex-col items-center justify-center py-5">
           <div class="flex flex-col items-center justify-center w-2/3">
             <div
-              class="flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
+              class="question flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
             >
               <p class="text-gray-700 group-hover:text-carnation">
                 How can I request a new browser?
@@ -287,11 +321,13 @@
               <img
                 src="./images/icon-arrow.svg"
                 alt=""
-                class="w-[18px] h-[12px]"
-                id="arrow-inverted"
+                class="w-[18px] h-[12px] arrow"
+                id="arrow2"
               />
             </div>
-            <p class="w-full mx-auto text-left mt-14 hidden">
+            <p
+              class="answer w-full mx-auto text-left mt-14 hidden border-b-2 border-gray-300"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur error accusamus, assumenda explicabo necessitatibus
               ducimus. Nostrum aut sapiente quaerat vel eum minima a id.
@@ -303,7 +339,7 @@
         <div class="flex flex-col items-center justify-center py-5">
           <div class="flex flex-col items-center justify-center w-2/3">
             <div
-              class="flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
+              class="question flex flex-row justify-between px-10 text-gray-600 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
             >
               <p class="text-gray-700 group-hover:text-carnation">
                 Is there a mobile app?
@@ -311,11 +347,13 @@
               <img
                 src="./images/icon-arrow.svg"
                 alt=""
-                class="w-[18px] h-[12px]"
-                id="arrow-inverted"
+                class="w-[18px] h-[12px] arrow"
+                id="arrow3"
               />
             </div>
-            <p class="w-full mx-auto text-left mt-14 hidden">
+            <p
+              class="answer w-full mx-auto text-left mt-14 hidden border-b-2 border-gray-300"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur error accusamus, assumenda explicabo necessitatibus
               ducimus. Nostrum aut sapiente quaerat vel eum minima a id.
@@ -327,7 +365,7 @@
         <div class="flex flex-col items-center justify-center py-5">
           <div class="flex flex-col items-center justify-center w-2/3">
             <div
-              class="flex flex-row justify-between px-10 text-gray-900 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
+              class="question flex flex-row justify-between px-10 text-gray-900 border-b-2 border-gray-300 w-full hover:cursor-pointer group items-center"
             >
               <p class="text-gray-700 group-hover:text-carnation">
                 What about other Chromium browsers
@@ -335,11 +373,13 @@
               <img
                 src="./images/icon-arrow.svg"
                 alt=""
-                class="w-[18px] h-[12px]"
-                id="arrow-inverted"
+                class="w-[18px] h-[12px] arrow"
+                id="arrow4"
               />
             </div>
-            <p class="hidden w-full mx-auto text-left mt-14">
+            <p
+              class="answer hidden w-full mx-auto text-left mt-14 border-b-2 border-gray-300"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consequatur error accusamus, assumenda explicabo necessitatibus
               ducimus. Nostrum aut sapiente quaerat vel eum minima a id.
@@ -349,5 +389,51 @@
         </div>
       </div>
     </section>
+    <section id="uptodate">
+      <div
+        class="bg-royalBlue flex flex-col items-center space-y-10 justify-center mx-auto pt-20 pb-20"
+      >
+        <h4 class="text-white font-bold">35,000+ Already Joined</h4>
+        <h2 class="text-white text-xl">
+          Stay up-to-date with what we're doing
+        </h2>
+        <div
+          class="flex flex-col md:flex-row max-w-lg space-y-3 md:space-y-0 items-center justify-center gap-5"
+        >
+          <input
+            type="text"
+            placeholder="Enter your email address"
+            class="px-5 py-2 rounded-lg placeholder:text-gray-500 focus:outline-none"
+          />
+          <button class="text-white bg-carnation px-5 py-2 rounded-lg">
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="py-20 px-5 flex flex-col md:flex-row md:justify-between bg-ebonyClay"
+    >
+      <div class="flex flex-col items-center justify-center md:flex-row gap-5">
+        <div class="flex flex-row">
+          <img src="./images/logo-bookmark-footer.svg" alt="" />
+        </div>
+        <div class="flex flex-col md:flex-row gap-5 text-center">
+          <a href="" class="text-mischka uppercase hover:text-carnation"
+            >Features</a
+          >
+          <a href="" class="text-mischka uppercase hover:text-carnation"
+            >Download</a
+          >
+          <a href="" class="text-mischka uppercase hover:text-carnation">Faq</a>
+        </div>
+      </div>
+      <div
+        class="flex flex-row items-center justify-center gap-10 mt-20 md:mt-0"
+      >
+        <img src="./images/icon-facebook.svg" alt="" class="ficon" />
+        <img src="./images/icon-twitter.svg" alt="" class="ficon" />
+      </div>
+    </footer>
   </body>
 </html>
