@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply text-4xl font-semibold text-center;
+  }
+  h3 {
+    @apply text-3xl font-semibold;
+  }
+  p {
+    @apply text-gray-400 text-lg;
+  }
+}
+
+@media screen(lg) {
+  .herobg {
+    width: 2000px;
+    height: 300px;
+    left: 60%;
+    @apply absolute top-80 bg-royalBlue rounded-full;
+  }
+
+  .bg-tab {
+    width: 2000px;
+    height: 300px;
+    right: 50%;
+    @apply absolute top-60 bg-royalBlue rounded-full;
+  }
+}
+
+#arrow-inverted {
+  transform: rotate(180deg);
+  @apply text-royalBlue;
+}
